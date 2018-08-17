@@ -7,6 +7,18 @@ describe('VoteComponent', () => {
     component = new VoteComponent();
   });
 
-  it('', () => {
+  it('should raise voteChanged event when upvoted', () => {
+
+    // Arrange
+    let totalVotes = null;
+    component.voteChanged.subscribe(tv => totalVotes = tv);
+
+    // Act 
+    component.upVote()
+
+    // Assert
+    // This test is a little bit generic
+    //expect(totalVotes).not.toBeNull();
+    expect(totalVotes).toBe(1);
   });
 });
